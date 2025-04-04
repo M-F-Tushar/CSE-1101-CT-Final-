@@ -13,25 +13,28 @@ Print "Palindrome" if they are the same, otherwise print "Not Palindrome".
 */
 #include <stdio.h>
 
-void checkPalindrome(int n) {
-    int original = n, reversed = 0, remainder;
-
-    while (n > 0) {
-        remainder = n % 10;  // Extract last digit
-        reversed = reversed * 10 + remainder;  // Build reversed number
-        n /= 10;  // Remove last digit
-    }
-
-    if (original == reversed)
-        printf("Palindrome\n");
-    else
-        printf("Not Palindrome\n");
-}
-
 int main() {
-    int num;
+    int num, reversed = 0, original, digit;
+    
+    // Taking user input
     printf("Enter a number: ");
     scanf("%d", &num);
-    checkPalindrome(num);
+    
+    original = num; // Store original number
+    
+    // Reverse the number
+    while (num > 0) {
+        digit = num % 10; // Get last digit
+        reversed = reversed * 10 + digit; // Build reversed number
+        num = num / 10; // Remove last digit
+    }
+    
+    // Check if original and reversed numbers are the same
+    if (original == reversed) {
+        printf("Palindrome\n");
+    } else {
+        printf("Not Palindrome\n");
+    }
+    
     return 0;
 }
