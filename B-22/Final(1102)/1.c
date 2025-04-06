@@ -1,3 +1,6 @@
+/*
+
+
 1. Determine if a Driver is Insured
 Explanation:
 A company insures drivers based on these conditions:
@@ -28,18 +31,8 @@ Check if female (F) and age > 25 → "Insured".
 Otherwise, print "Not Insured".
 
 Display the result.
-
+*/
 #include <stdio.h>
-
-void checkInsurance(char maritalStatus, char gender, int age) {
-    if (maritalStatus == 'M') {
-        printf("Insured\n");
-    } else if ((gender == 'M' && age > 30) || (gender == 'F' && age > 25)) {
-        printf("Insured\n");
-    } else {
-        printf("Not Insured\n");
-    }
-}
 
 int main() {
     char maritalStatus, gender;
@@ -48,7 +41,13 @@ int main() {
     printf("Enter Marital Status (M/U), Gender (M/F), Age: ");
     scanf(" %c %c %d", &maritalStatus, &gender, &age);
 
-    checkInsurance(maritalStatus, gender, age);
+    if (maritalStatus == 'M') {
+        printf("Insured\n");
+    } else if ((gender == 'M' && age > 30) || (gender == 'F' && age > 25)) {
+        printf("Insured\n");
+    } else {
+        printf("Not Insured\n");
+    }
 
     return 0;
 }
