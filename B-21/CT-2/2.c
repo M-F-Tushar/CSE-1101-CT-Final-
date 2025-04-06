@@ -1,5 +1,30 @@
 2. C Program to Find the Factorial of a Given Integer
+#include <stdio.h>
 
+int main() {
+    int n, i;
+    unsigned long long factorial = 1;
+
+    // Ask user for input
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    // Check for negative input
+    if (n < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        // Calculate factorial
+        for (i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+
+        // Output result
+        printf("Factorial of %d = %llu\n", n, factorial);
+    }
+
+    return 0;
+}
+/*
 #include <stdio.h>
 
 // Function to calculate factorial
@@ -28,24 +53,46 @@ int main() {
 
     return 0;
 }
-Explanation
-Function factorial(n):
+✅ Example Input: n = 5
+We want to calculate:
+5! = 5 × 4 × 3 × 2 × 1 = 120
 
-Uses a loop to multiply numbers from 1 to n.
+🔢 Code Explanation (Step by Step):
+int n, i;
+unsigned long long factorial = 1;
+n: to store the number entered by the user
 
-Handles negative inputs.
+i: loop counter
 
-Main function:
+factorial: to store the result; set to 1 because multiplying by 1 does not change the result.
 
-Takes user input.
+📥 Input Section:
+printf("Enter a positive integer: ");
+scanf("%d", &n);
+User enters 5.
 
-Calls factorial() function.
+❗ Negative Number Check:
+if (n < 0) {
+    printf("Factorial is not defined for negative numbers.\n");
+}
+Since n = 5, we skip this part.
 
-Prints the result.
+🔁 Loop to Calculate Factorial:
+for (i = 1; i <= n; i++) {
+    factorial *= i;
+}
+Let’s break it down iteration by iteration:
 
-Example Runs
-Enter a number: 5
-Factorial of 5 is 120
+Iteration	i	factorial (before)	factorial *= i	factorial (after)
+1	        1	    1	                1 * 1	        1
+2	        2	    1	                1 * 2	        2
+3	        3	    2	                2 * 3	        6
+4	        4	    6	                6 * 4	        24
+5	        5	    24	                24 * 5	        120
+So the final value of factorial is 120.
 
-Enter a number: 7
-Factorial of 7 is 5040
+🖨️ Output:
+printf("Factorial of %d = %llu\n", n, factorial);
+Prints:
+Factorial of 5 = 120
+*/
