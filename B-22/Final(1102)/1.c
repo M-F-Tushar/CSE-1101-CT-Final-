@@ -1,7 +1,20 @@
 /*
+1. A company insures its drivers based on their marital status, gender, and age. Write a program that determines if a driver qualifies for insurance based on the following conditions:
+   - Married drivers are insured.
+   - Unmarried male drivers are insured if they are over 30 years old.
+   - Unmarried female drivers are insured if they are over 25 years old.
+   - Otherwise, the driver is not insured.
+   
+   **Input Format**  
+   - A single line with marital status (M or U), gender (M or F), and age (integer).  
+   
+   **Output Format**  
+   - Print "Insured" if the driver qualifies, otherwise print "Not Insured".
 
+   **Sample Input | Sample Output**  
+   **U M 27** → **Not Insured**  
+   **M M 25** → **Insured**  
 
-1. Determine if a Driver is Insured
 Explanation:
 A company insures drivers based on these conditions:
 
