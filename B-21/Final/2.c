@@ -1,3 +1,4 @@
+/*
 2. Print Fibonacci Series up to N Terms
 Explanation:
 The Fibonacci series starts with 0 and 1, and each subsequent number is the sum of the previous two (e.g., 0, 1, 1, 2, 3, 5,...).
@@ -8,7 +9,7 @@ Take input for n (the number of terms).
 Use a loop to generate the Fibonacci sequence.
 
 Print the sequence.
-
+*/
 #include <stdio.h>
 
 int main() {
@@ -31,6 +32,7 @@ int main() {
 
     return 0;
 }
+/*
 Suppose,the loop runs n times. Let's trace it for n = 7:
 
 count	first	second	fibo Calculation	fibo Output
@@ -41,3 +43,4 @@ count	first	second	fibo Calculation	fibo Output
 4	    1	    2	    fibo = 1 + 2 = 3	    3
 5	    2	    3	    fibo = 2 + 3 = 5	    5
 6	    3	    5	    fibo = 3 + 5 = 8	    8
+*/
