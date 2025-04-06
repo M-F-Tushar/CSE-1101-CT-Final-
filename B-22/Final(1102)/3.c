@@ -1,4 +1,23 @@
-3. Employee Salary Calculation Based on Work Hours
+/*
+3. Create a C structure **Employee** for 10 employees, storing:
+   - Name (up to 20 characters)
+   - Salary (float)
+   - Hours of Work Per Day (integer)
+
+   Salary increases:
+   - ≤ 8 hours → 30% increase  
+   - 10 hours → 50% increase  
+   - ≥ 12 hours → 100% increase  
+
+   **Input Format**  
+   - Read employee details from **input.txt** (name, salary, hours per day).  
+   - Compute final salary and store it in **output.txt**.
+
+   **Sample Input | Sample Output**  
+   **Dennis Ritchie 60000.00 10** → **Dennis Ritchie 90000**  
+   **Rashid Khan 90000.00 14** → **Rashid Khan 180000**  
+
+Employee Salary Calculation Based on Work Hours
 Explanation:
 An employee's salary is adjusted based on hours worked:
 
@@ -22,43 +41,39 @@ Read input from a file (input.txt).
 Apply salary increments based on hours worked.
 
 Store the final salary in output.txt.
-
-C Code:
-c
-Copy
-Edit
+*/
 #include <stdio.h>
 
 typedef struct {
-    char name[20];
-    float salary;
-    int hours;
+    char name[20];  // Employee name
+    float salary;   // Employee salary
+    int hours;      // Hours worked per day
 } Employee;
 
-void calculateSalary(Employee *e) {
-    if (e->hours <= 8) {
-        e->salary *= 1.3;  // Increase by 30%
-    } else if (e->hours == 10) {
-        e->salary *= 1.5;  // Increase by 50%
-    } else if (e->hours >= 12) {
-        e->salary *= 2.0;  // Increase by 100%
-    }
-}
-
 int main() {
-    FILE *input = fopen("input.txt", "r");
-    FILE *output = fopen("output.txt", "w");
+    FILE *input = fopen("input.txt", "r");  // Open the input file
+    FILE *output = fopen("output.txt", "w"); // Open the output file
 
-    Employee emp;
+    Employee emp;  // Declare an employee variable
 
+    // Read the employee details from the input file
     while (fscanf(input, "%s %f %d", emp.name, &emp.salary, &emp.hours) != EOF) {
-        calculateSalary(&emp);
+        // Adjust salary based on the hours worked
+        if (emp.hours <= 8) {
+            emp.salary *= 1.3;  // 30% increase
+        } else if (emp.hours == 10) {
+            emp.salary *= 1.5;  // 50% increase
+        } else if (emp.hours >= 12) {
+            emp.salary *= 2.0;  // 100% increase
+        }
+
+        // Write the name and updated salary to the output file
         fprintf(output, "%s %.2f\n", emp.name, emp.salary);
     }
 
-    fclose(input);
-    fclose(output);
+    fclose(input);  // Close the input file
+    fclose(output);  // Close the output file
 
-    printf("Final salaries written to output.txt\n");
+    printf("Salaries updated and saved to output.txt\n");
     return 0;
 }
