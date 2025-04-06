@@ -18,17 +18,3 @@ b << c → 9 << 3:
 Output
 a>>1 = 7
 b<<1 = 72
-Final Outputs Summary
-Rules of Identifiers: Listed 5 key rules.
-
-Program Output:
-6 6 6 5 4
-(Unspecified order may vary)
-
-Program Output:
-0 0 3 4 1
-Program Output:
-14
-Program Output:
-a>>1 = 7
-b<<1 = 72
