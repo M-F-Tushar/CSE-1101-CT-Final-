@@ -18,10 +18,10 @@ int factorial(int n) { ... }
 
 
 🔹 Q2 b) Distinguish between while and do-while loops [8 Marks]
-Feature	while loop	do-while loop
-Condition Check	Before entering the loop	After executing the loop body once
-Execution	May not execute if condition is false	Executes at least once
-Syntax	while (condition) {}	do { } while (condition);
+Feature	      while loop	                            do-while loop
+Condition     Check	Before entering the loop	        After executing the loop body once
+Execution	  May not execute if condition is false    	Executes at least once
+Syntax	      while (condition) {}	                    do { } while (condition);
 Example:
 
 // while
