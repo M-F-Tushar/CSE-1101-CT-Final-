@@ -1,8 +1,5 @@
-
 1. C Program to Check Whether a Given String is a Palindrome
-c
-Copy
-Edit
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
