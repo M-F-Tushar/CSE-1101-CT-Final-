@@ -13,6 +13,7 @@ int main() {
     }
     return 0;
 }
+
 Step-by-Step Execution
 Outer loop (i from 1 to 2):
 
