@@ -1,3 +1,4 @@
+5. Show the output of the following Program:
 #include<stdio.h>
 int main() {
     int a = 60, b = 9, c = 3;
