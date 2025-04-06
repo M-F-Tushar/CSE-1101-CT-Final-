@@ -1,3 +1,5 @@
+3. Show the output of the following Program:
+
 #include<stdio.h>
 int main() {
     int i = -1, j = -1, k = 2, l = 5, m;
@@ -5,6 +7,7 @@ int main() {
     printf("%d %d %d %d %d", i, j, k, l, m);
     return 0;
 }
+/*
 Step-by-Step Execution
 i++: -1 && (post-increments i to 0 but evaluates as true).
 
