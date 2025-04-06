@@ -13,7 +13,7 @@ int main() {
     }
     return 0;
 }
-
+/*
 Step-by-Step Execution
 Outer loop (i from 1 to 2):
 
@@ -38,3 +38,4 @@ Week: 2
  Day:3
  Day:5
  Day:7
+*/
