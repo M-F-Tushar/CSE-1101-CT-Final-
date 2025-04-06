@@ -25,7 +25,7 @@ int main() {
 
     return 0;
 }
-
+/*
 💡 Step-by-Step Execution (Input: madam)
 
 Step 1: User inputs
@@ -46,3 +46,4 @@ isPalindrome = 1
 ✅ Final Output:
 
 'madam' is a palindrome.
+*/
