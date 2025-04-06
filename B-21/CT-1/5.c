@@ -6,6 +6,7 @@ int main() {
     printf("b<<1 = %d", (b << c));
     return 0;
 }
+/*
 Step-by-Step Execution
 a >> c → 60 >> 3:
 
@@ -18,3 +19,4 @@ b << c → 9 << 3:
 Output
 a>>1 = 7
 b<<1 = 72
+*/
