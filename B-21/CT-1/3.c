@@ -22,11 +22,6 @@ k++: 2 &&, post-increments k = 3 but evaluates as true.
 m = 1.
 
 Final Values
-ini
-Copy
-Edit
 i = 0, j = 0, k = 3, l = 4, m = 1
 Output
-Copy
-Edit
 0 0 3 4 1
