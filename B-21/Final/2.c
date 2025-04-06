@@ -11,28 +11,33 @@ Print the sequence.
 
 #include <stdio.h>
 
-void printFibonacci(int n) {
-    int a = 0, b = 1, next;
-    printf("Fibonacci Series: %d, %d", a, b);
-
-    for (int i = 2; i < n; i++) {
-        next = a + b;
-        printf(", %d", next);
-        a = b;
-        b = next;
-    }
-    printf("\n");
-}
-
 int main() {
-    int n;
-    printf("Enter the number of terms: ");
+    int first = 0, second = 1, count = 0, fibo, n;
+
+    printf("Enter the number of Fibonacci terms: ");
     scanf("%d", &n);
 
-    if (n < 2) {
-        printf("Please enter a number greater than or equal to 2\n");
-    } else {
-        printFibonacci(n);
+    while (count < n) {
+        if (count <= 1) {
+            fibo = count;
+        } else {
+            fibo = first + second;
+            first = second;
+            second = fibo;
+        }
+        printf("%d ", fibo);
+        count++;
     }
+
     return 0;
 }
+Suppose,the loop runs n times. Let's trace it for n = 7:
+
+count	first	second	fibo Calculation	fibo Output
+0	    -	    -	    fibo = 0	            0
+1	    -	    -	    fibo = 1	1
+2	    0	    1	    fibo = 0 + 1 = 1	    1
+3	    1	    1	    fibo = 1 + 1 = 2	    2
+4	    1	    2	    fibo = 1 + 2 = 3	    3
+5	    2	    3	    fibo = 2 + 3 = 5	    5
+6	    3	    5	    fibo = 3 + 5 = 8	    8
