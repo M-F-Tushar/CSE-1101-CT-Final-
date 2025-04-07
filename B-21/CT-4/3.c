@@ -1,7 +1,4 @@
 3. Output of the Given Recursive Program
-c
-Copy
-Edit
 #include<stdio.h>
 
 int recursion(int x) {
@@ -16,38 +13,84 @@ int main() {
     int result = recursion(5);
     return 0;
 }
-Step-by-Step Execution
-recursion(5) → y = 5 + 0 = 5, prints 5
+/*
+🧩 Start: recursion(5)
+x = 5, y = 0
 
-Calls recursion(3) → y = 3 + 5 = 8, prints 8
+y = y + x = 0 + 5 = 5
 
-Calls recursion(1) → y = 1 + 8 = 9, prints 9
+✅ Print: 5
 
-Calls recursion(-1) → returns 1
+Calls:
 
-Calls recursion(-2) → returns 1
+recursion(3)
 
-recursion(1) returns 1 + 1 = 2
+recursion(2)
 
-Calls recursion(0) → returns 1
+➤ Now: recursion(3)
+x = 3, y = 5
 
-Calls recursion(-1) → returns 1
+y = 5 + 3 = 8
 
-recursion(3) returns 2 + 1 = 3
+✅ Print: 8
 
-Calls recursion(2) → y = 2 + 9 = 11, prints 11
+Calls:
 
-Calls recursion(0) → returns 1
+recursion(1)
 
-Calls recursion(-1) → returns 1
+recursion(0)
 
-recursion(2) returns 1 + 1 = 2
+➤ Then: recursion(1)
+x = 1, y = 8
 
-recursion(5) returns 3 + 2 = 5
+y = 8 + 1 = 9
 
-Printed Output
-Copy
-Edit
+✅ Print: 9
+
+Calls:
+
+recursion(-1)
+
+recursion(-2)
+
+➤ recursion(-1)
+x = -1, so x <= 0
+
+❌ Does not print — just returns 1
+
+➤ recursion(-2)
+Same as above → ❌ no print — just returns 1
+
+So, at this point, all the deeper calls under recursion(1) are base cases — they don't print anything.
+
+➤ Back to recursion(0) (from recursion(3))
+x = 0 → ❌ no print — returns 1
+
+➤ Now: recursion(2) (from very first call recursion(5))
+x = 2, y = 9
+
+y = 9 + 2 = 11
+
+✅ Print: 11
+
+Calls:
+
+recursion(0) → ❌ no print — returns 1
+
+recursion(-1) → ❌ no print — returns 1
+
+✅ Final Summary — What got printed?
+Only these calls had x > 0, so they printed:
+
+recursion(5) → 5
+
+recursion(3) → 8
+
+recursion(1) → 9
+
+recursion(2) → 11
+
+✅ Final Output:
 5
 8
 9
