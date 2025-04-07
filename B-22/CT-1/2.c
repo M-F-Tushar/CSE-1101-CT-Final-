@@ -1,7 +1,4 @@
 2. C Program to Store and Display Scientist Information Using Structure
-c
-Copy
-Edit
 #include <stdio.h>
 
 // Define a structure for Scientist
@@ -24,9 +21,6 @@ int main() {
     return 0;
 }
 Sample Output
-pgsql
-Copy
-Edit
 Name: Dr. Mamun
 Age: 55.5
 Publication: 45
