@@ -1,7 +1,4 @@
 2. Show the output of the given C program:
-c
-Copy
-Edit
 #include <stdlib.h>
 #include <stdio.h>
 int main()
@@ -18,6 +15,7 @@ int main()
     getchar();
     return 0;
 }
+/*
 Step-by-Step Execution:
 i = 1 → prints 1, then i = 1 * 2 = 2
 
@@ -30,9 +28,8 @@ i = 8 → prints 8, then i = 8 * 2 = 16
 i = 16, but since i > 15, the loop breaks.
 
 Output:
-Copy
-Edit
 1
 2
 4
 8
+*/
