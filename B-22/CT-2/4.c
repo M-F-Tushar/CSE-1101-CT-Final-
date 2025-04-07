@@ -48,6 +48,34 @@ Initial Array:
 [3, 1, 5, 2, 4]
 Bubble Sort:
 The goal of Bubble Sort is to repeatedly compare adjacent elements and swap them if they are in the wrong order. This process is repeated until the array is sorted.
+Step-by-Step Breakdown:
+Outer Loop (for(i = 0; i < n - 1; i++))
+This loop controls how many passes we make over the entire array. We need a total of n - 1 passes (where n is the number of elements in the array).
+
+Each pass through the array moves the largest unsorted element to its correct position.
+
+Why i < n - 1?
+
+If the array has n elements, after n - 1 passes, all elements will be in their correct positions.
+
+Inner Loop (for(j = 0; j < n - i - 1; j++))
+This loop compares adjacent elements in the array. But notice that after each outer loop pass, the largest element gets "bubbled" to the end of the array. So, we don't need to check the last elements every time. That’s why the condition is j < n - i - 1.
+
+After the first pass, the largest element will be in the last position, so we don’t compare it anymore.
+
+After the second pass, the second-largest element will be in the second-to-last position, and so on.
+
+Comparison (if(arr[j] > arr[j + 1]))
+This checks if the current element arr[j] is greater than the next element arr[j + 1].
+
+If true, it means they are in the wrong order, so we need to swap them.
+
+Swap (temp = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = temp;)
+If arr[j] > arr[j + 1], we swap the elements.
+
+We store arr[j] in a temporary variable temp to avoid losing its value during the swap.
+
+Then, we assign arr[j + 1] to arr[j], and finally, assign temp (which holds the original arr[j]) to arr[j + 1].
 
 First Pass (i = 0):
 
