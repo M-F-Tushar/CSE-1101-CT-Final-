@@ -40,6 +40,7 @@ int main() {
 
     return 0;
 }
+/*
 Let's say we have the following array of integers:
 Array: [3, 1, 5, 2, 4]
 Step-by-Step Explanation:
@@ -137,3 +138,4 @@ After all passes, the array is now completely sorted:
 
 [1, 2, 3, 4, 5]
 The maximum value is now at the last index of the array, which is arr[4] = 5.
+*/
