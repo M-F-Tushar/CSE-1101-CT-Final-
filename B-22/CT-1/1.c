@@ -28,6 +28,7 @@ int main() {
 
     return 0;
 }
+/*
 🧱 STEP 1: Structure Definition
 struct Point {
     float x;
@@ -86,4 +87,4 @@ printf("Distance = %.2f\n", distance);
 ✔️ Output:
 
 Distance = 5.00
-
+*/
