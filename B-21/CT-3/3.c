@@ -1,7 +1,4 @@
 3. Output of the Given Program
-c
-Copy
-Edit
 #include <stdio.h>
 #include <string.h>
 int main()
@@ -10,32 +7,39 @@ int main()
     printf("%s\n", strcpy(str2, strcat(str1, str2)));
     return 0;
 }
-Step-by-Step Execution
-Initial Values
-
-ini
-Copy
-Edit
-str1 = "Taskin"
-str2 = " so so"
+/*
+🧠 Key Functions Involved:
 strcat(str1, str2)
+→ Appends str2 to the end of str1.
 
-Concatenates str2 to str1.
+strcpy(str2, result)
+→ Copies result into str2.
 
-str1 becomes "Taskin so so".
+printf("%s\n", ...)
+→ Prints the final string stored in str2.
 
-strcpy(str2, str1)
+🔧 Step-by-Step Execution
+Initial state:
+str1 = "Taskin" → size 20
 
-Copies "Taskin so so" to str2.
+str2 = " so so" → size 20
 
-Prints str2
+📍Step 1: strcat(str1, str2)
+Appends " so so" to "Taskin"
 
-nginx
-Copy
-Edit
+Result:
+str1 = "Taskin so so"
+
+📍Step 2: strcpy(str2, strcat(str1, str2))
+We already computed strcat(str1, str2) → "Taskin so so"
+
+Now, copy that result to str2
+
+So str2 = "Taskin so so"
+
+📍Step 3: printf("%s\n", str2)
+Prints: Taskin so so
+
+🔚 Final Output:
 Taskin so so
-Output
-nginx
-Copy
-Edit
-Taskin so so
+*/
