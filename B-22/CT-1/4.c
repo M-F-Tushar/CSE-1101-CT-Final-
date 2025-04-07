@@ -1,7 +1,4 @@
 4. Errors in the Given Code
-c
-Copy
-Edit
 #include<stdio.h>
 struct zoho {
     int employees;
@@ -17,42 +14,57 @@ int main() {
     printf("%s %d %s", zs.comp, zs.employees, zs.p.ceo);
     return 0;
 }
-Errors & Fixes
-Structure founder is used before definition
+/*
+🚨 Errors in the Code:
+1.Structure Definition Order:
 
-struct founder must be defined before using it in struct zoho.
+In the struct zoho, you're trying to use a struct founder named p before it is defined. In C, the compiler needs to know about struct founder before it can be used in struct zoho.
 
-Wrong Initialization Order
+Solution: Move the definition of struct founder above struct zoho.
 
-"sridhar" should be assigned to zs.p.ceo, not directly in zs.
+2.Array Size Mismatch:
 
-Corrected Code
-c
-Copy
-Edit
+char comp[5] is too small for the string "zoho", which requires 5 characters plus the null terminator (6 bytes). This will cause a buffer overflow.
+
+Solution: Increase the size of the comp array to at least 6 to fit the string "zoho".
+
+3.Structure Initialization:
+
+When initializing struct zs, you're trying to assign "sridhar" to zs.p.ceo. This is fine, but you should make sure that the ceo array has enough space. ceo[10] is enough to hold the string "sridhar".
+
+✅ Corrected Code:
+Here’s the corrected version of your code:
+
 #include <stdio.h>
-#include <string.h>
 
-// Define founder before using it in zoho
+// Define the founder structure first
 struct founder {
     char ceo[10];
 };
 
-// Define zoho structure
+// Now define the zoho structure which uses founder
 struct zoho {
     int employees;
-    char comp[5];
+    char comp[6];   // Increase size to 6 to hold "zoho" and null terminator
     struct founder p;
 };
 
 int main() {
-    struct zoho zs = {4000, "zoho", {"sridhar"}};  // Corrected initialization
+    // Initialize the struct properly
+    struct zoho zs = {4000, "zoho", {"sridhar"}};  // Note: initialize ceo inside braces
 
-    printf("%s %d %s\n", zs.comp, zs.employees, zs.p.ceo);
+    // Print the values
+    printf("%s %d %s", zs.comp, zs.employees, zs.p.ceo);
+
     return 0;
 }
-Output
-yaml
-Copy
-Edit
+🔑 Changes Made:
+Moved struct founder above struct zoho.
+
+Increased char comp[5] to char comp[6] to accommodate the string "zoho".
+
+Properly initialized zs.p.ceo using {"sridhar"}.
+
+🧪 Output of the corrected code:
 zoho 4000 sridhar
+    */
