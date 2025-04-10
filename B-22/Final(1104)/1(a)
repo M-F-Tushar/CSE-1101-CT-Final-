@@ -1,0 +1,25 @@
+✅ Question 1(a): Calculate letter grade using HLOOKUP
+Given Table Structure:
+Marks to Grade Scale:
+
+Marks	0	60	70	80
+Grade	F	D	B	A
+This scale is shown in cells H3 to K4.
+
+Goal:
+Use the HLOOKUP function to calculate the Letter Grade for each student based on their marks.
+
+Step-by-step:
+Suppose you want to calculate the grade for the first student (row 2), whose marks are in cell B2. Use the following formula in C2 (Letter Grade column):
+
+=HLOOKUP(B2, $H$3:$K$4, 2, TRUE)
+Explanation:
+B2: The value to look up (student’s marks).
+
+$H$3:$K$4: The table array for HLOOKUP.
+
+2: Row number in the table array to return the value from (Grade row).
+
+TRUE: Allows approximate match (works like ranges).
+
+Repeat this formula for each row (e.g., C3 will use B3 instead of B2).
