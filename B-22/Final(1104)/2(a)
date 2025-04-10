@@ -1,0 +1,23 @@
+✅ Question 2(a): Relative vs Absolute Reference in Microsoft Excel
+🔹 Relative Reference:
+This is the default type of reference in Excel.
+When you copy a formula from one cell to another, the reference changes based on its new position.
+
+✅ Example:
+In cell C2:
+
+=A2 + B2
+If you copy this to cell C3, it will change to:
+
+=A3 + B3
+➡ Useful when you're applying the same formula across multiple rows or columns.
+
+🔹 Absolute Reference:
+This locks the reference to a specific cell. You use the dollar sign ($) to lock either the row, column, or both.
+
+✅ Example:
+=$A$2 + B2
+Even if you copy this down to C3, it still remains:
+
+=$A$2 + B3
+➡ Useful when you're referring to a fixed cell, like a constant value or grade scale.
