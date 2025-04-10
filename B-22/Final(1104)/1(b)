@@ -1,0 +1,13 @@
+✅ Question 1(b): Count students with marks ≥ 70 using SUMPRODUCT
+You are given a list of marks (Column B) and asked to count how many students scored at least 70 marks.
+
+Step-by-step:
+Assuming the marks are in cells B2:B12, write the formula in E2:
+
+=SUMPRODUCT(--(B2:B12 >= 70))
+Explanation:
+B2:B12 >= 70: Creates a TRUE/FALSE array.
+
+--: Converts TRUE/FALSE to 1/0.
+
+SUMPRODUCT: Adds up the 1s, giving the total count of students scoring ≥ 70.
