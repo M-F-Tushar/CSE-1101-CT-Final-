@@ -13,25 +13,31 @@ Print the sequence.
 #include <stdio.h>
 
 int main() {
-    int first = 0, second = 1, count = 0, fibo, n;
+    int N, first = 0, second = 1, next;
 
-    printf("Enter the number of Fibonacci terms: ");
-    scanf("%d", &n);
+    // Get number of terms from the user
+    printf("Enter the number of terms: ");
+    scanf("%d", &N);
 
-    while (count < n) {
-        if (count <= 1) {
-            fibo = count;
-        } else {
-            fibo = first + second;
-            first = second;
-            second = fibo;
-        }
-        printf("%d ", fibo);
-        count++;
+    // Edge cases
+    if (N <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
     }
 
+    printf("Fibonacci Series up to %d terms:\n", N);
+
+    for (int i = 1; i <= N; i++) {
+        printf("%d ", first);
+        next = first + second;
+        first = second;
+        second = next;
+    }
+
+    printf("\n");
     return 0;
 }
+
 /*
 Suppose,the loop runs n times. Let's trace it for n = 7:
 
