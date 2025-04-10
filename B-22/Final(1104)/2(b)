@@ -1,0 +1,32 @@
+✅ Question 2(b): Uses of Excel Functions
+1️⃣ RANDBETWEEN(bottom, top)
+Generates a random whole number between two numbers you define.
+
+✅ Example:
+
+=RANDBETWEEN(1, 100)
+➡ Gives a random number from 1 to 100. Changes each time the sheet recalculates.
+
+2️⃣ ROUNDOWN(number, num_digits)
+Rounds a number down towards zero, keeping a specific number of decimal places.
+
+✅ Example:
+=ROUNDDOWN(3.987, 2)
+➡ Output: 3.98
+
+3️⃣ SUMPRODUCT(array1, [array2], …)
+Multiplies corresponding elements in arrays and returns the sum of those products.
+
+✅ Example:
+=SUMPRODUCT(A2:A4, B2:B4)
+➡ If A2:A4 = {2,3,4} and B2:B4 = {5,6,7},
+It calculates (2×5) + (3×6) + (4×7) = 56
+
+4️⃣ SUBSTITUTE(text, old_text, new_text, [instance_num])
+Replaces specific text within a string.
+
+✅ Example:
+=SUBSTITUTE("I like cats", "cats", "dogs")
+➡ Output: "I like dogs"
+
+You can also replace only the 2nd or 3rd instance of a word using the optional 4th argument.
