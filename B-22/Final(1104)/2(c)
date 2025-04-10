@@ -1,0 +1,30 @@
+✅ Question 1(c): Explain the SUMPRODUCT formulas
+Given Table:
+A	            B
+Date of Sales	Quantity
+14 Dec, 2023	60
+28 Dec, 2023	75
+11 Jan, 2024	55
+25 Jan, 2024	82
+01 Feb, 2024	90
+(i) Formula:
+=SUMPRODUCT(--(MONTH(A2:A6)=1))
+Explanation:
+MONTH(A2:A6): Extracts month number from each date.
+
+=1: Checks if the month is January.
+
+--: Converts TRUE/FALSE to 1/0.
+
+SUMPRODUCT: Adds up all the 1s.
+
+✅ Result: Counts how many sales occurred in January.
+
+(ii) Formula:
+=SUMPRODUCT(--(MONTH(A2:A6)=1), B2:B6)
+Explanation:
+Same as above, but also multiplies the 1s with the values in B2:B6.
+
+Effectively sums the sales quantities in January.
+
+✅ Result: Total quantity sold in January.
