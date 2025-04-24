@@ -18,10 +18,14 @@ int factorial(int n) { ... }
 
 
 🔹 Q2 b) Distinguish between while and do-while loops [8 Marks]
-Feature	      while loop	                            do-while loop
-Condition     Check	Before entering the loop	        After executing the loop body once
-Execution	  May not execute if condition is false    	Executes at least once
-Syntax	      while (condition) {}	                    do { } while (condition);
+Feature                     | while Loop | do-while Loop
+Condition Check             | Before executing the loop body                | After executing the loop body
+Minimum Executions          | 0 times (may not run at all)                  | At least 1 time (runs once before check)
+Syntax                      | while (condition) { ... }                     | do { ... } while (condition);
+Use Case                    | When the condition must be true to run        | When the loop must run at least once
+Control Type                | Entry-controlled loop                         | Exit-controlled loop
+Semicolon After Condition   | ❌ Not required                               | ✅ Required (while (...);)
+Common Use                  | Input validation, reading until condition     | Menu-driven programs, retry mechanisms
 Example:
 
 // while
@@ -45,7 +49,7 @@ Function:
 𝑦={ 1   for 𝑥<0
     0   for 𝑥=0
     −1  for 𝑥>0
-
+    }
 
 ✅ Code:
 
