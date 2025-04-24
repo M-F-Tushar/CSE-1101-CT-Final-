@@ -35,15 +35,34 @@ int main() {
     return 0;
 }
 ➤ Step-by-step:
-++i → 0, ++j → 0
+Part 1: ++i && ++j
+++i → i = 0 → result = 0 (false)
 
-So ++i && ++j → 0 (false)
+Since ++i is 0, && short-circuits → ++j is NOT evaluated.
 
-Now check k++ && l++ → 2 && 5 → 1 (true), k becomes 3, l becomes 6
+So:
+i = 0
+j = -1 (unchanged)
 
-So m = 0 || 1 → 1
+Part 2: k++ && l++
+Because the first part (++i && ++j) is false, the second part must be evaluated due to the ||.
+k++ → returns 2 (true), then k = 3
+Since k++ is true, l++ is evaluated → returns 5, then l = 6
 
-Final values: i=0, j=0, k=3, l=6, m=1
+So:
+k = 3
+l = 6
+    
+Expression becomes:
 
-✅ Output:
-0 0 3 6 1
+0 || (2 && 5) → 0 || 1 → 1
+So m = 1
+
+Final values:
+i = 0   // incremented
+j = -1  // not evaluated due to short-circuit
+k = 3   // post-incremented
+l = 6   // post-incremented
+m = 1   // result of expression
+✅ Correct Output:
+0 -1 3 6 1
