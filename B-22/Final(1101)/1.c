@@ -1,9 +1,11 @@
 🔹 Q1 a) Distinguish between compiler and interpreter [9 Marks]
-Feature	            Compiler	                            Interpreter
-Execution Speed	    Faster, compiles whole code at once	    Slower, runs code line by line
-Error Detection	    Shows all errors after compilation	    Stops at the first error
-Output	            Creates an executable file	            No executable, directly runs
-Usage Example	    C, C++	                                Python, JavaScript
+Feature         | Compiler                                                                     | Interpreter
+Execution       | Translates the whole program at once into machine code before execution.     | Translates line-by-line or statement-by-statement and executes immediately.
+Speed           | Faster after compilation (because the code is already translated).           | Slower, as it translates and runs code simultaneously.
+Error Detection | Shows all errors after the whole program is compiled.                        | Shows errors one at a time as it runs the code.
+Output          | Generates a separate executable file (.exe, .out, etc.).                     | Does not create a separate executable.
+Examples        | C, C++, Rust, Go                                                             | Python, JavaScript, Ruby
+Memory Usage    | Generally higher during compilation but efficient at runtime.                | Typically uses more memory at runtime due to line-by-line execution.
 
 
 
