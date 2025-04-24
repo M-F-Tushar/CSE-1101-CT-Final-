@@ -66,3 +66,31 @@ l = 6   // post-incremented
 m = 1   // result of expression
 ✅ Correct Output:
 0 -1 3 6 1
+/*
+🔌 What is Short-Circuiting?
+Short-circuiting means the program stops evaluating an expression as soon as the final result is known.
+This is an optimization technique that avoids unnecessary computations.
+
+🔍 Two Main Operators That Use It:
+1. && (Logical AND)
+If the first condition is false, the entire expression is false, no need to check the second.
+✅ Used when both conditions must be true.
+
+Example:
+if (x != 0 && 10 / x > 1)
+If x is 0, then x != 0 is false, so the second part (10 / x > 1) is never evaluated, avoiding a divide-by-zero error.
+
+2. || (Logical OR)
+If the first condition is true, the whole expression is true, no need to check the second.
+✅ Used when just one condition needs to be true.
+
+Example:
+if (a > 10 || b++ > 5)
+If a > 10 is true, then b++ is not executed, so b is not incremented.
+
+💡 Why is it useful?
+Efficiency: Saves time by skipping unnecessary evaluations.
+Safety: Prevents errors like dividing by zero, accessing null pointers, etc.
+Control Flow: You can use it to control whether certain code runs.
+
+*/
