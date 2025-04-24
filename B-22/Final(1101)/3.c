@@ -1,7 +1,6 @@
 🔹 Q3 a) Briefly explain switch-case with proper example. [12 Marks]
 ✅ Explanation:
 switch is a conditional statement that allows multi-way branching. It matches a variable's value with case labels and executes corresponding code.
-
 It's cleaner than multiple if-else blocks.
 
 ✅ Syntax:
