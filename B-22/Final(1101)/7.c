@@ -1,15 +1,14 @@
 a) Differentiate between array and structure. (08 Marks)
 
-Feature	Array	Structure
-Definition	Collection of elements of same type	Collection of variables of different types
-Memory	Contiguous memory for all elements	Memory allocated separately for each member
-Access	Indexed using position (e.g., arr[0])	Accessed using member name (e.g., s.name)
+Feature	    Array	                                Structure
+Definition	Collection of elements of same type	    Collection of variables of different types
+Memory	    Contiguous memory for all elements	    Memory allocated separately for each member
+Access	    Indexed using position (e.g., arr[0])	Accessed using member name (e.g., s.name)
 Use Case	Storing list of same data (e.g., marks)	Grouping related data (e.g., a record)
-Type	Homogeneous	Heterogeneous
+Type	    Homogeneous	                            Heterogeneous
+
 b) Show the output of the following program: (13 Marks)
-c
-Copy
-Edit
+
 #include <stdio.h>
 
 int main() {
@@ -72,8 +71,6 @@ Now back to recursion(5):
 → recursion(5) returns 3 + 2 = 5
 
 ✅ Output Printed:
-Copy
-Edit
 5
 8
 9
@@ -83,9 +80,6 @@ Edit
 c) Write a C program with recursive function to compute the value Xⁿ where n is a positive integer and x has real value. (14 Marks)
 Here’s a simple program:
 
-c
-Copy
-Edit
 #include <stdio.h>
 #include <math.h>
 
@@ -105,6 +99,4 @@ int main() {
 }
 Output (example):
 
-Copy
-Edit
 2.50^3 = 15.63
