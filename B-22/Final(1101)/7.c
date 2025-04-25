@@ -1,100 +1,110 @@
-✅ Question 7
-(a) Output of the recursive function
-🔹 Code:
+a) Differentiate between array and structure. (08 Marks)
 
+Feature	Array	Structure
+Definition	Collection of elements of same type	Collection of variables of different types
+Memory	Contiguous memory for all elements	Memory allocated separately for each member
+Access	Indexed using position (e.g., arr[0])	Accessed using member name (e.g., s.name)
+Use Case	Storing list of same data (e.g., marks)	Grouping related data (e.g., a record)
+Type	Homogeneous	Heterogeneous
+b) Show the output of the following program: (13 Marks)
+c
+Copy
+Edit
 #include <stdio.h>
 
-int fun(int val) {
-    if (val == 0)
+int main() {
+    int result = recursion(5);
+    return 0;
+}
+
+int recursion(int x) {
+    static int y = 0;
+    if (x <= 0)
         return 1;
-    return 2 * fun(val - 1);
+
+    y = x + y;
+    printf("%d\n", y);
+    return recursion(x - 2) + recursion(x - 3);
+}
+🧠 Understand What's Going On:
+static int y = 0; → persists between function calls.
+
+On each call (when x > 0):
+
+y = x + y;
+
+print y
+
+recurse into recursion(x - 2) and recursion(x - 3)
+
+🔍 Step-by-step trace:
+Let’s evaluate recursion(5).
+
+➤ recursion(5)
+x = 5, y = 0 → y = 5, prints 5
+
+calls recursion(3) and recursion(2)
+
+➤ recursion(3)
+x = 3, y = 5 → y = 8, prints 8
+
+calls recursion(1) and recursion(0)
+
+➤ recursion(1)
+x = 1, y = 8 → y = 9, prints 9
+
+calls recursion(-1) and recursion(-2) → both return 1
+
+→ recursion(1) returns 1 + 1 = 2
+
+➤ recursion(0) → returns 1
+→ recursion(3) returns 2 + 1 = 3
+
+➤ recursion(2)
+x = 2, y = 9 → y = 11, prints 11
+
+calls recursion(0) and recursion(-1) → both return 1
+
+→ recursion(2) returns 1 + 1 = 2
+
+Now back to recursion(5):
+
+→ recursion(5) returns 3 + 2 = 5
+
+✅ Output Printed:
+Copy
+Edit
+5
+8
+9
+11
+(These are values of y printed during execution.)
+
+c) Write a C program with recursive function to compute the value Xⁿ where n is a positive integer and x has real value. (14 Marks)
+Here’s a simple program:
+
+c
+Copy
+Edit
+#include <stdio.h>
+#include <math.h>
+
+double power(double x, int n) {
+    if(n == 0)
+        return 1;
+    return x * power(x, n - 1);
 }
 
 int main() {
-    int num = 5;
-    int res = fun(num);
-    printf("Result = %d\n", res);
+    double x = 2.5;
+    int n = 3;
+
+    double result = power(x, n);
+    printf("%.2lf^%d = %.2lf\n", x, n, result);
     return 0;
 }
-🔸 Breakdown:
-Let’s calculate:
-fun(5) = 2 * fun(4)
-       = 2 * 2 * fun(3)
-       = 2 * 2 * 2 * fun(2)
-       = 2 * 2 * 2 * 2 * fun(1)
-       = 2 * 2 * 2 * 2 * 2 * fun(0)
-       = 2^5 * 1 = 32
-✅ Output:
+Output (example):
 
-Result = 32
-(b) Final value of j and explanation
-🔹 Code:
-
-#include <stdio.h>
-
-int increment(int i) {
-    static int count = 0;
-    count = count + i;
-    return count;
-}
-
-int main() {
-    int i, j;
-    for (i = 0; i <= 4; i++)
-        j = increment(i);
-}
-🔸 Execution:
-Let's trace the loop:
-
-i	count = count + i	return value (j)
-0	0 + 0 = 0	0
-1	0 + 1 = 1	1
-2	1 + 2 = 3	3
-3	3 + 3 = 6	6
-4	6 + 4 = 10	10
-✅ Final value of j:
-
-j = 10
-Because the last return value from increment(i) is 10.
-
-(c) Count number of "ok" in a string
-🔹 Task:
-Count the number of times "ok" appears as a substring in a lowercase sentence.
-
-🔹 Sample Input:
-
-i am ok are you ok is all ok okay
-✅ Output:
-
-4
-Matches:
-
-"ok"
-
-"ok"
-
-"ok"
-
-"okay" (contains "ok")
-
-🔹 Code in C:
-
-#include <stdio.h>
-#include <string.h>
-
-int countOK(char str[]) {
-    int count = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == 'o' && str[i + 1] == 'k')
-            count++;
-    }
-    return count;
-}
-
-int main() {
-    char str[100];
-    fgets(str, sizeof(str), stdin); // to read full line with spaces
-    int result = countOK(str);
-    printf("%d\n", result);
-    return 0;
-}
+Copy
+Edit
+2.50^3 = 15.63
