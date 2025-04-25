@@ -1,4 +1,4 @@
-🔹 Q3 a) Briefly explain switch-case with proper example. [12 Marks]
+🔹 Q3 a) Briefly explain switch-case with proper example. [5 Marks]
 ✅ Explanation:
 switch is a conditional statement that allows multi-way branching. It matches a variable's value with case labels and executes corresponding code.
 It's cleaner than multiple if-else blocks.
@@ -32,69 +32,106 @@ Output:
 Tuesday
 
 
-🔹 Q3 b) Write a pseudocode to delete an element at a desired position from an array. [13 Marks]
-✅ Pseudocode:
+🔹 Q3 b) Evaluate the Boolean expressions [10 Marks]
+i) !(5 + 5 >= 10)
+5 + 5 = 10
 
-Procedure DeleteElement(array, size, position)
-    if position < 0 or position ≥ size:
-        Print "Invalid position"
-        return
+10 >= 10 → true (1)
 
-    for i from position to size - 2:
-        array[i] = array[i + 1]
+!1 → false (0)
 
-    size = size - 1
-    return array
-✅ Example in C-like logic:
+✅ Answer: 0
 
-int arr[100], n, pos;
-printf("Enter number of elements: ");
-scanf("%d", &n);
+ii) 5 + 5 == 10 || 1 + 3 == 5
+5 + 5 = 10, so 10 == 10 → true (1)
 
-printf("Enter elements: ");
-for(int i = 0; i < n; i++)
-    scanf("%d", &arr[i]);
+1 + 3 = 4, so 4 == 5 → false (0)
 
-printf("Enter position to delete: ");
-scanf("%d", &pos);
+1 || 0 → true (1)
 
-if(pos < 0 || pos >= n) {
-    printf("Invalid position\n");
-} else {
-    for(int i = pos; i < n - 1; i++)
-        arr[i] = arr[i + 1];
-    n--;
+✅ Answer: 1
 
-    printf("Array after deletion:\n");
-    for(int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-}
+iii) 5 > 10 || 10 < 20 && 3 < 5
+5 > 10 → false (0)
 
+10 < 20 → true (1)
 
+3 < 5 → true (1)
 
-🔹 Q3 c) Show output of the following program: [10 Marks]
+10 < 20 && 3 < 5 → 1 && 1 → 1
+
+So, 0 || 1 → 1
+
+✅ Answer: 1
+
+iv) 10 != 15 && !(10 < 20) || 15 > 30
+10 != 15 → true (1)
+
+10 < 20 → true (1) → !1 = 0
+
+So, 1 && 0 = 0
+
+15 > 30 → false (0)
+
+So, final: 0 || 0 = 0
+
+✅ Answer: 0
+
+v) 7 > 10 && 10 < 20 && 3 > 5
+7 > 10 → false (0)
+
+Even though the rest are true, with &&, all must be true.
+
+So, 0 && 1 && 0 = 0
+
+✅ Answer: 0
+
+Q3 c) Write a C program to find the factorial of a given integer. [10 Marks]
 
 #include <stdio.h>
+
 int main() {
-    int i = 1;
-    do {
-        printf("%d\n", i);
-        i = i + 2;
-        if (i >= 20)
-            break;
-    } while (1);
-    getchar();
+    int n, i;
+    unsigned long long factorial = 1;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    if (n < 0)
+        printf("Factorial is not defined for negative numbers.\n");
+    else {
+        for (i = 1; i <= n; ++i)
+            factorial *= i;
+
+        printf("Factorial of %d = %llu\n", n, factorial);
+    }
+
     return 0;
 }
-✅ Output:
+Q3 d) Write a C program to compute the grade of a subject. [10 Marks]
 
-1
-3
-5
-7
-9
-11
-13
-15
-17
-19
+#include <stdio.h>
+
+int main() {
+    int mark;
+
+    printf("Enter subject mark: ");
+    scanf("%d", &mark);
+
+    if (mark >= 80)
+        printf("Grade: A+\n");
+    else if (mark >= 75)
+        printf("Grade: A\n");
+    else if (mark >= 70)
+        printf("Grade: A-\n");
+    else if (mark >= 60)
+        printf("Grade: B\n");
+    else if (mark >= 50)
+        printf("Grade: C\n");
+    else if (mark >= 40)
+        printf("Grade: D\n");
+    else
+        printf("Grade: F\n");
+
+    return 0;
+}
