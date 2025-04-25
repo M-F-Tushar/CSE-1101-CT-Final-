@@ -1,108 +1,80 @@
+Q5 a) Define user-defined function and built-in function. (07 Marks)
+User-defined function: A function created by the user to perform a specific task.
 
-✅ Question 5
-(a) Define Dangling Pointer:
-🔹 Definition:
-A dangling pointer is a pointer that continues to reference a memory location after it has been freed or deallocated.
+int sum(int a, int b) {
+    return a + b;
+}
+Built-in function: Functions that are provided by C libraries. Example:
+int len = strlen("hello");  // strlen is a built-in function
 
-🔹 Problem:
-Using a dangling pointer can lead to undefined behavior such as crashes or corrupting data.
+b) Write the correct string handling statement to store the concatenation of strings s1 and s2 in string s3. (08 Marks)
+You can use strcpy and strcat functions from <string.h>:
+strcpy(s3, s1);    // Copy s1 to s3
+strcat(s3, s2);    // Concatenate s2 to s3
+Make sure s3 has enough space to hold the combined string.
 
-🔹 Example:
+c) Do you recommend using goto statement in C? Justify your answer. (08 Marks)
+Recommendation: Generally, not recommended.
 
-#include <stdio.h>
+Justification:
+It makes code less readable and harder to maintain.
+It can lead to "spaghetti code", especially in large programs.
+Better alternatives: if, for, while, break, continue, and function calls.
+However, it can be useful in special cases like breaking out of nested loops or error handling in resource cleanup.
+
+d) Show the output of the following program: (12 Marks)
 #include <stdlib.h>
-
-int main() {
-    int *ptr = (int *)malloc(sizeof(int));
-    *ptr = 42;
-    free(ptr); // memory is freed, ptr becomes dangling
-
-    printf("%d\n", *ptr); // dangerous! accessing freed memory
-    ptr = NULL; // ✅ Safe: Now ptr no longer dangles
-
-    return 0;
-}
-🔹 Solution:
-Always set the pointer to NULL after freeing:
-
-free(ptr);
-ptr = NULL;
-(b) Show the output with justification
-i. Code
-c
-Copy
-Edit
-int main() {
-    int arr[5] = { 1, 2, 3, 4, 5 };
-    int* ptr_arr = arr;
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", *ptr_arr);
-        ptr_arr++;
-    }
-}
-✅ Output:
-
-1 2 3 4 5
-🔸 Explanation:
-ptr_arr is initialized to point to arr.
-
-*ptr_arr dereferences and prints the value.
-
-Then we increment the pointer to move to the next element.
-
-ii. Code
-c
-Copy
-Edit
-int main() {
-    char str[] = "CSTU CSE";
-    char* ptr = str;
-    for (int i = 0; i < strlen(ptr); i++) {
-        printf("%c ", *ptr);
-        ptr++;
-    }
-}
-✅ Output:
-
-C S T U   C S E
-🔸 Explanation:
-ptr points to str.
-
-*ptr prints each character.
-
-ptr++ moves to next character.
-
-(c) Recursive program for sequence:
-🔹 Sequence rule:
-First 3 numbers: 1 2 3
-
-Next number = product of last 3: 1*2*3 = 6
-
-Then 2*3*6 = 36
-
-Then 3*6*36 = 648, and so on...
-
-🔹 Recursive logic:
-t
 #include <stdio.h>
 
-int sequence(int n) {
-    if (n == 1) return 1;
-    if (n == 2) return 2;
-    if (n == 3) return 3;
-    return sequence(n - 1) * sequence(n - 2) * sequence(n - 3);
-}
+int main()
+{
+    char c[] = "CSTUDAY2023";
+    char *p = c;
 
-int main() {
-    int N;
-    scanf("%d", &N);
-    if (N < 1 || N >= 100)
-        printf("Invalid input\n");
-    else
-        printf("%d\n", sequence(N));
+    printf("%c\n%8c\n", *p, *(p + p[6] - p[1]));
+    printf("%8c", *(p + (p[2] - p[1])));
     return 0;
 }
-✅ Sample Output:
-For input 6, output will be:
+Step-by-step analysis:
+String: "CSTUDAY2023"
+Index-wise:
+c[0] = 'C'
+c[1] = 'S'
+c[2] = 'T'
+c[3] = 'U'
+c[4] = 'D'
+c[5] = 'A'
+c[6] = 'Y'
+c[7] = '2'
+c[8] = '0'
+c[9] = '2'
+c[10] = '3'
+Pointer p points to start of c, i.e., p = &c[0]
 
-648
+1st printf:
+printf("%c\n%8c\n", *p, *(p + p[6] - p[1]));
+*p → *(&c[0]) = 'C'
+
+p[6] = 'Y' = 89 (ASCII)
+
+p[1] = 'S' = 83 (ASCII)
+
+p + p[6] - p[1] = p + (89 - 83) = p + 6 = &c[6] → *(&c[6]) = 'Y'
+
+So output is:
+C
+       Y
+2nd printf:
+printf("%8c", *(p + (p[2] - p[1])));
+p[2] = 'T' = 84
+
+p[1] = 'S' = 83
+
+p + (84 - 83) = p + 1 = &c[1] → *(&c[1]) = 'S'
+
+So output is (8 spaces, then S):
+       S
+✅ Final Output:
+C
+       Y
+       S
