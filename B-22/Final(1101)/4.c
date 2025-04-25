@@ -1,182 +1,121 @@
-🔹 a) Explain the following code segments with suitable input and output [10 Marks]
-i.
-c
-Copy
-Edit
-scanf("%[A-Za-z]", str);
-printf("%s\n", str);
-✅ Explanation:
+4. a) Compare the following pairs of statements [12 Marks]
+i) break and continue
 
-%[A-Za-z] reads a sequence of only alphabets until a non-alphabet character (like space or digit) is found.
+Feature	        break	                                    continue
+Usage	        Exits the loop entirely	                    Skips the current iteration
+Affects	        Loops (for, while, do-while), switch	    Only loops (for, while, do-while)
+After effect	Control moves outside the loop	            Control moves to the next iteration
+Example:
 
-Stops reading when it encounters a character outside A–Z or a–z.
+for (int i = 0; i < 5; i++) {
+    if (i == 2)
+        break;
+    printf("%d ", i);
+}
+// Output: 0 1
 
-Input:
+for (int i = 0; i < 5; i++) {
+    if (i == 2)
+        continue;
+    printf("%d ", i);
+}
+// Output: 0 1 3 4
+ii) while and do-while
 
-nginx
-Copy
-Edit
-Hello123
-Output:
+Feature	while loop	do-while loop
+Condition check	At the beginning	At the end
+Execution	May not execute even once	Executes at least once
+Example:
 
-nginx
-Copy
-Edit
-Hello
-ii.
-c
-Copy
-Edit
-scanf("%[^\n]s", str);
-printf("%s\n", str);
-✅ Explanation:
+int x = 5;
+while (x < 5) {
+    printf("Hi");
+}
+// No output
 
-%[^\n] reads input until a newline is encountered (i.e., reads entire line including spaces).
+int x = 5;
+do {
+    printf("Hi");
+} while (x < 5);
+// Output: Hi
 
-Common for reading full sentences.
+4. b) Program to sort an array and find the maximum value [11 Marks]
 
-Input:
+#include <stdio.h>
 
-csharp
-Copy
-Edit
-This is ChatGPT!
-Output:
-
-csharp
-Copy
-Edit
-This is ChatGPT!
-🔹 b) Show the output of the following programs [10 Marks]
-i.
-c
-Copy
-Edit
 int main() {
-    int a[5] = {1, 2, 3, 4, 5};
-    for (int i = 0; i < 5; i++) {
-        if ((char)a[i] == '5')
-            printf("%d\n", a[i]);
-        else
-            printf("FAIL\n");
+    int arr[100], n, i, j, temp;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    // Bubble sort
+    for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
     }
-    return 0;
-}
-✅ Explanation:
-char value of a[i] is being compared with '5' (ASCII 53).
 
-Only a[i] == 5 matches '5'.
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);
 
-Output:
-
-nginx
-Copy
-Edit
-FAIL
-FAIL
-FAIL
-FAIL
-5
-ii.
-c
-Copy
-Edit
-int main() {
-    float x = 3.14;
-    double y = 3.14;
-
-    if (x == y)
-        printf("Equal");
-    else
-        printf("Not Equal");
-}
-✅ Explanation:
-
-float and double have different precision.
-
-Comparison may result in Not Equal, especially on strict compilers.
-
-Most Likely Output:
-Not Equal
-
-
-🔹 c) Show the errors and rewrite the corrected code [15 Marks]
-(i)Original Code:
-
-int main() {
-    int a, b;
-    Scanf(" %d %lf", a, b);
-    if (a > b)
-        printf("");
-    else
-        printf("You have to play it");
-}
-❌ Errors:
-Scanf → should be scanf (C is case-sensitive)
-
-"%d %lf" format is for int and double, but variables are int. Change to "%d %d".
-
-Missing & before variables in scanf.
-
-printf("") – does nothing. Should print something meaningful.
-
-Missing return 0;.
-
-✅ Corrected Code:
-
-#include <stdio.h>
-
-int main() {
-    int a, b;
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-
-    if (a > b)
-        printf("A is greater\n");
-    else
-        printf("You have to play it\n");
+    printf("\nMaximum value: %d\n", arr[n-1]);
 
     return 0;
 }
+4. c) Analyze loops and determine how many times they execute [12 Marks]
+i)
 
-(ii)✅ Original Code:
-
-int main() {
-    int i = 5, j = 5;
-    if(i >= j);
-        printf("G");
-    else if
-        printf("L");
-    else
-        printf("E");
+int x = 5, y = 50;
+while (x <= y)
+{
+    x = y / x;
 }
-❌ Errors Identified:
-Semicolon (;) after if(i >= j):
-This ends the if prematurely, making the following printf("G") always execute regardless of the condition.
+Step-by-step Execution:
 
-else if missing condition:
-else if must be followed by a condition in parentheses.
+1st: x = 5, y = 50 → x <= y → 5 <= 50 → true → x = 50 / 5 = 10
 
-✅ Corrected Code:
-c
-Copy
-Edit
-#include <stdio.h>
+2nd: x = 10 → 10 <= 50 → true → x = 50 / 10 = 5
 
-int main() {
-    int i = 5, j = 5;
+3rd: x = 5 → 5 <= 50 → true → x = 50 / 5 = 10
 
-    if(i >= j)
-        printf("G");
-    else if(i < j)
-        printf("L");
-    else
-        printf("E");
+This causes a loop: x alternates between 5 and 10 indefinitely → Infinite Loop
 
-    return 0;
+✅ Answer: Infinite loop
+
+ii)
+
+int m = 10, n = 7;
+while (m % n >= 0)
+{
+    m = m + 1;
+    n = n + 2;
 }
-✅ Explanation:
-Since i = 5 and j = 5, the condition i >= j is true.
+Let’s track each step:
 
-Output:
-G
+
+Iteration	m	n	m % n	Condition (>= 0)	Action
+1	10	7	3	✅ Yes	m=11, n=9
+2	11	9	2	✅ Yes	m=12, n=11
+3	12	11	1	✅ Yes	m=13, n=13
+4	13	13	0	✅ Yes	m=14, n=15
+5	14	15	14	✅ Yes	m=15, n=17
+6	15	17	15	✅ Yes	m=16, n=19
+7	16	19	16	✅ Yes	m=17, n=21
+8	17	21	17	✅ Yes	m=18, n=23
+9	18	23	18	✅ Yes	m=19, n=25
+10	19	25	19	✅ Yes	m=20, n=27
+11	20	27	20	✅ Yes	m=21, n=29
+12	21	29	21	✅ Yes	m=22, n=31
+And so on... Notice: m % n is always less than n, and modulo of positive numbers is always ≥ 0, so condition never becomes false.
+
+✅ Answer: Infinite loop
