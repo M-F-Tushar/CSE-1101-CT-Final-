@@ -1,140 +1,138 @@
-✅ Question 8
-(a) Define Recursive Function [07 Marks]
-🔹 Definition:
-A recursive function is a function that calls itself to solve a smaller subproblem of the original task, until it reaches a base condition.
+8. a) What is the purpose of '\0' character in C?
+Answer:
 
-🔹 Example:
+In C, the '\0' character is called the null character, and it is used to mark the end of a string.
+
+When you declare a string in C like this:
+char str[] = "Hello";
+It is actually stored as:
+H   e   l   l   o   \0
+So, the null character '\0' tells C functions (like printf, strlen, etc.) where the string ends.
+
+8. b) Structure to store student data and sort by merit
+We are to:
+Create a structure to store:
+Name
+Roll number
+Marks for 6 subjects
+Total marks
+Store data for 10 students
+Sort and display students according to merit (i.e., total marks in descending order)
+Here’s a step-by-step solution in C:
 
 #include <stdio.h>
+#include <string.h>
 
-int factorial(int n) {
-    if (n == 0)
-        return 1;           // base case
-    else
-        return n * factorial(n - 1);  // recursive case
+struct Student {
+    char name[50];
+    int roll;
+    int marks[6];
+    int total;
+};
+
+// Function to calculate total marks
+int calculateTotal(int marks[]) {
+    int sum = 0;
+    for (int i = 0; i < 6; i++) {
+        sum += marks[i];
+    }
+    return sum;
+}
+
+// Function to sort students by total marks (Descending)
+void sortByMerit(struct Student students[], int n) {
+    struct Student temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (students[i].total < students[j].total) {
+                temp = students[i];
+                students[i] = students[j];
+                students[j] = temp;
+            }
+        }
+    }
 }
 
 int main() {
-    printf("%d\n", factorial(5));  // Output: 120
-    return 0;
-}
-🔹 Output:
+    struct Student students[10];
 
-120
-(b) Multiply two 3×4 arrays and store in a 2D array C
-Given:
+    // Input
+    for (int i = 0; i < 10; i++) {
+        printf("Enter name of student %d: ", i + 1);
+        scanf("%s", students[i].name);
 
-Arrays A and B are 3×4
+        printf("Enter roll number: ");
+        scanf("%d", &students[i].roll);
 
-Compute: C = A + 2B (element-wise)
+        printf("Enter marks for 6 courses:\n");
+        for (int j = 0; j < 6; j++) {
+            scanf("%d", &students[i].marks[j]);
+        }
 
-✅ Code:
+        students[i].total = calculateTotal(students[i].marks);
+    }
 
-#include <stdio.h>
+    // Sort by total marks
+    sortByMerit(students, 10);
 
-int main() {
-    int A[3][4], B[3][4], C[3][4];
-
-    // Input A
-    printf("Enter elements for array A (3x4):\n");
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 4; j++)
-            scanf("%d", &A[i][j]);
-
-    // Input B
-    printf("Enter elements for array B (3x4):\n");
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 4; j++)
-            scanf("%d", &B[i][j]);
-
-    // Compute C = A + 2 * B
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 4; j++)
-            C[i][j] = A[i][j] + 2 * B[i][j];
-
-    // Output C
-    printf("Resulting array C:\n");
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 4; j++)
-            printf("%d ", C[i][j]);
-        printf("\n");
+    // Output sorted data
+    printf("\nStudents sorted by merit:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Name: %s, Roll: %d, Total Marks: %d\n", students[i].name, students[i].roll, students[i].total);
     }
 
     return 0;
 }
-(c) State and explain any three string functions [08 Marks]
-✅ 1. strlen(str)
-Returns the length of a string.
-
-strlen("hello");  // returns 5
-✅ 2. strcpy(dest, src)
-Copies src string into dest.
-
-
-char str1[20], str2[] = "copy this";
-strcpy(str1, str2);
-✅ 3. strcmp(str1, str2)
-Compares two strings.
-
-Returns 0 if equal
-
-Negative if str1 < str2
-
-Positive if str1 > str2
-
-strcmp("apple", "banana");  // returns negative
-(d) Output of the Recursive Program [12 Marks]
-🔹 Code:
-
+8. c) Output of the given C program
+#include <stdlib.h>
 #include <stdio.h>
 
-int Myfunc(int n);
-
-int main() {
-    Myfunc(7);
+int main()
+{
+    char c[] = "Chandpur";
+    char *p = c;
+    printf("%c\n", *p);           // 1
+    printf("%s\n", p);            // 2
+    printf("%c\n", *(p+2));       // 3
+    printf("%s\n", (p+2));        // 4
+    printf("%s\n", p++ + 3);      // 5
     return 0;
 }
+Let’s break it down:
 
-int Myfunc(int n) {
-    if (n == 0)
-        return n;
-    else {
-        int value = Myfunc(n - 1);
-        printf("%d ", value);
-        return n;
-    }
-}
-🔸 Execution Trace:
-Myfunc(7)
+char c[] = "Chandpur"; → Array contains 'C', 'h', 'a', 'n', 'd', 'p', 'u', 'r', '\0'
 
-Myfunc(6)
+char *p = c; → Pointer p now points to the start of the array ('C')
 
-Myfunc(5)
+Line by line:
 
-Myfunc(4)
+*p → 'C'
 
-Myfunc(3)
+Output: C
 
-Myfunc(2)
+p is pointing to "Chandpur"
 
-Myfunc(1)
+Output: Chandpur
 
-Myfunc(0) → returns 0
+*(p + 2) → 'a'
 
-prints 0, returns 1
+Output: a
 
-prints 1, returns 2
+(p + 2) is the string starting from 'a' → "andpur"
 
-prints 2, returns 3
+Output: andpur
 
-prints 3, returns 4
+p++ + 3:
 
-prints 4, returns 5
+p++ uses the current p (still at 'C') and then increments p to point to 'h'
 
-prints 5, returns 6
+So, p++ + 3 → p (originally at C) + 3 → pointer to 'n' → string from 'n' onward: "ndpur"
 
-prints 6, returns 7
+Output: ndpur
 
-✅ Output:
-
-0 1 2 3 4 5 6
+Final Output:
+C
+Chandpur
+a
+andpur
+ndpur
