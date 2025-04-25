@@ -1,4 +1,25 @@
-🔹 Q1 a) Distinguish between compiler and interpreter [9 Marks]
+🔹 Q1 a) Why is C programming language called structured programming language?
+C is called a structured programming language because it encourages a clear, logical, and hierarchical approach to writing programs. Here are the key reasons:
+🔹 1. Use of Functions (Modularity)
+C allows programs to be broken into smaller parts called functions. Each function performs a specific task, making code easier to:
+Understand
+Maintain
+Reuse
+Example: Instead of writing all code in main(), you can create functions like calculateSum(), displayResult(), etc.
+🔹 2. Sequential Execution
+Structured programs follow a top-down approach:
+Code is written in a logical order, from start to finish
+Each statement is executed sequentially, unless there's a condition or loop
+🔹 3. Control Structures
+C provides structured control flow mechanisms:
+Selection: if, else, switch
+Loops: for, while, do-while
+Branching: break, continue, goto (though goto is discouraged in structured programming)
+These replace unstructured jumps like those in older languages using goto, which often led to "spaghetti code."
+🔹 4. Top-Down Design Approach
+C supports designing a program from the top level (main task) down to sub-tasks, which fits the structured programming model.
+/*
+a) Distinguish between compiler and interpreter [9 Marks]
 Feature         | Compiler                                                                     | Interpreter
 Execution       | Translates the whole program at once into machine code before execution.     | Translates line-by-line or statement-by-statement and executes immediately.
 Speed           | Faster after compilation (because the code is already translated).           | Slower, as it translates and runs code simultaneously.
@@ -6,10 +27,43 @@ Error Detection | Shows all errors after the whole program is compiled.         
 Output          | Generates a separate executable file (.exe, .out, etc.).                     | Does not create a separate executable.
 Examples        | C, C++, Rust, Go                                                             | Python, JavaScript, Ruby
 Memory Usage    | Generally higher during compilation but efficient at runtime.                | Typically uses more memory at runtime due to line-by-line execution.
+*/
 
 
+🔹 Q1 b) Write a program to find whether the given number is an Armstrong number or not.
+#include <stdio.h>
+#include <math.h>
 
-🔹 Q1 b) Identify invalid variable names and explain why [12 Marks]
+int main() {
+    int number, original, remainder, result = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    original = number;
+
+    while (original != 0) {
+        remainder = original % 10;
+        result += remainder * remainder * remainder;  // or use pow(remainder, 3);
+        original /= 10;
+    }
+
+    if (result == number)
+        printf("%d is an Armstrong number.\n", number);
+    else
+        printf("%d is not an Armstrong number.\n", number);
+
+    return 0;
+}
+🔹 What is an Armstrong Number?
+A number is an Armstrong number if the sum of the cubes of its digits is equal to the number itself.
+
+Example:
+153 = 1³ + 5³ + 3³ = 1 + 125 + 27 = 153 ✅
+So, 153 is an Armstrong number.  
+      
+/*
+Identify invalid variable names and explain why [12 Marks]
 Student#ID – ❌ Invalid: # is not allowed in variable names.
 
 first.name – ❌ Invalid: . is used for structure member access.
@@ -21,7 +75,7 @@ Computer science – ❌ Invalid: Cannot contain space.
 Doubles – ✅ Valid (but shouldn’t be a keyword; here it's fine).
 
 Char_name – ✅ Valid.
-
+*/
 
 
 
