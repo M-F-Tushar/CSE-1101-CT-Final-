@@ -9,7 +9,7 @@ int main() {
 
     // Taking input string from the user
     printf("Enter a string: ");
-    scanf("%[^\n]s", str);  // Using scanf to read the whole line (including spaces)
+    scanf("%[^\n]", str);  // Using scanf to read the whole line (including spaces)
 
     // Loop through each character of the string
     while (str[i] != '\0') {
