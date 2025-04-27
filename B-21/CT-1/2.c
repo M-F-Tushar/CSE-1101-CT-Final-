@@ -1,29 +1,24 @@
-
+2. Show the output of the following Program:
 #include<stdio.h>
 int main() {
     int i = 4;
     printf("%d %d %d %d %d", i++, ++i, i, i--, i--);
     return 0;
 }
-Step-by-Step Execution
-i = 4 initially.
+/*
+Let's step-by-step assume left to right evaluation (even though officially not guaranteed):
 
-Function parameters are evaluated in an unspecified order in C.
+i++ → Use i=4, then increment i to 5.
 
-Possible order of execution and values:
+++i → First increment i from 5 to 6, then use 6.
 
-i++ → Post-increment, returns 4, then i = 5.
+i → Now i is 6, so use 6.
 
-++i → Pre-increment, i = 6, returns 6.
+i-- → Use i=6, then decrement i to 5.
 
-i → 6.
+i-- → Use i=5, then decrement i to 4.
 
-i-- → Post-decrement, returns 6, then i = 5.
+🛠 So values printed would be:
 
-i-- → Post-decrement, returns 5, then i = 4.
-
-Possible Output (due to unspecified order)
-Copy
-Edit
-6 6 6 5 4
-or another valid order-based output.
+4 6 6 6 5
+    */
