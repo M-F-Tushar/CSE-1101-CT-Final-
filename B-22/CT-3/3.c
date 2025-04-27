@@ -1,7 +1,7 @@
-3.C Program to Count Vowels and Consonants in a String 
+//3.C Program to Count Vowels and Consonants in a String 
 
 #include <stdio.h>
-#include <ctype.h> // For tolower() function
+#include <ctype.h> // For tolower()
 
 int main() {
     char str[100];
@@ -9,25 +9,22 @@ int main() {
 
     // Taking input string from the user
     printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);  // Using fgets to read the string (including spaces)
+    scanf("%[^\n]s", str);  // Using scanf to read the whole line (including spaces)
 
     // Loop through each character of the string
     while (str[i] != '\0') {
-        // Convert character to lowercase to handle both uppercase and lowercase letters
-        char ch = tolower(str[i]);
+        char ch = tolower(str[i]); // Convert character to lowercase
 
-        // Check if the character is a letter (ignoring spaces and special characters)
+        // Check if the character is a letter
         if (ch >= 'a' && ch <= 'z') {
-            // Check if the character is a vowel
+            // Check if vowel
             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
                 vowels++;
-            }
-            // If it's not a vowel, it's a consonant
-            else {
+            } else {
                 consonants++;
             }
         }
-        i++;  // Move to the next character
+        i++; // Move to next character
     }
 
     // Display the results
