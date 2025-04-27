@@ -59,20 +59,18 @@ i	        s[i]	                s[i+1]	    Condition Met?	    count
 14	        ' '	                    'a'	        ✅	                    2
 15	        'a'	                    ' '	        No	                    2
 16	         ' '	                'p'	        ✅	                    3
-17–24	"priority"	Not space	No	3
+17–24	"priority"	                Not space	No	                    3
 25	' '	'f'	✅	4
-26–28	"for"	Not space	No	4
+26–28	"for"	                    Not space	No	                    4
 29	' '	'C'	✅	5
-30–32	"CSE"	Not space	No	5
+30–32	"CSE"	                    Not space	No	                    5
 33	' '	's'	✅	6
-34–41	"students"	Not space	No	6
+34–41	"students"	                Not space	No	                    6
 🧮 Total count = 6
 Each match of the condition found a new word start after a space. But we missed the very first word, "Programming", since it doesn't follow a space.
 
 ✅ Final Step:
-c
-Copy
-Edit
+
 printf("%d", count + 1);
 Adds 1 to count to include the first word.
 
