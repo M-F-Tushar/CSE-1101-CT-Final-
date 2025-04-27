@@ -1,23 +1,19 @@
 🔹 Q1 a) Why is C programming language called structured programming language?
-C is called a structured programming language because it encourages a clear, logical, and hierarchical approach to writing programs. Here are the key reasons:
-🔹 1. Use of Functions (Modularity)
-C allows programs to be broken into smaller parts called functions. Each function performs a specific task, making code easier to:
-Understand
-Maintain
-Reuse
-Example: Instead of writing all code in main(), you can create functions like calculateSum(), displayResult(), etc.
-🔹 2. Sequential Execution
-Structured programs follow a top-down approach:
-Code is written in a logical order, from start to finish
-Each statement is executed sequentially, unless there's a condition or loop
-🔹 3. Control Structures
-C provides structured control flow mechanisms:
-Selection: if, else, switch
-Loops: for, while, do-while
-Branching: break, continue, goto (though goto is discouraged in structured programming)
-These replace unstructured jumps like those in older languages using goto, which often led to "spaghetti code."
-🔹 4. Top-Down Design Approach
-C supports designing a program from the top level (main task) down to sub-tasks, which fits the structured programming model.
+✅ Breaks programs into functions: Large programs are divided into smaller, manageable functions.
+
+✅ Top-down approach: Main problem is solved first, then divided into smaller sub-problems.
+
+✅ Use of control structures: Uses if-else, switch, for, while, do-while for controlling flow logically.
+
+✅ Avoids "goto" based flow: Reduces use of unstructured "goto" statements that make code messy.
+
+✅ Modularity: Each function or module handles a specific task, making code organized.
+
+✅ Better readability and maintenance: Structured programs are easier to read, debug, and update.
+
+✅ Encourages reusability: Functions can be reused across different parts of the program.
+
+✅ Improves reliability: Structured programming helps write correct and bug-free programs.
 /*
 a) Distinguish between compiler and interpreter [9 Marks]
 Feature         | Compiler                                                                     | Interpreter
