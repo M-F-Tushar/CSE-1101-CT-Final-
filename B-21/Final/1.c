@@ -11,7 +11,6 @@ Compare the reversed number with the original.
 
 Print "Palindrome" if they are the same, otherwise print "Not Palindrome".
 */
-
 #include <stdio.h>
 
 int main() {
