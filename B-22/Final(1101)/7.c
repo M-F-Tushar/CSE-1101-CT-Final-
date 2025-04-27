@@ -97,6 +97,36 @@ int main() {
     printf("%.2lf^%d = %.2lf\n", x, n, result);
     return 0;
 }
-Output (example):
+/*
+Step-by-step execution:
+We are calculating 
+2.5 to the power 3.
+Call: power(2.5, 3)
 
-2.50^3 = 15.63
+n != 0, so it returns 2.5 * power(2.5, 2)
+
+Call: power(2.5, 2)
+
+n != 0, so it returns 2.5 * power(2.5, 1)
+
+Call: power(2.5, 1)
+
+n != 0, so it returns 2.5 * power(2.5, 0)
+
+Call: power(2.5, 0)
+
+n == 0, so it returns 1
+
+Now substitute back:
+
+power(2.5, 0) = 1
+
+power(2.5, 1) = 2.5 * 1 = 2.5
+
+power(2.5, 2) = 2.5 * 2.5 = 6.25
+
+power(2.5, 3) = 2.5 * 6.25 = 15.625
+
+Final result:
+Result = 15.625
+*/
