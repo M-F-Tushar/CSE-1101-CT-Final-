@@ -2,7 +2,7 @@
 Answer:
 Feature	                while Loop	                                                        do-while Loop
 Execution Condition	    The condition is checked before entering the loop body.	            The loop body executes at least once, then the condition is checked.
-Execution               Guarantee	May not execute if the condition is false initially.	Always executes at least once.
+Execution Guarantee	    May not execute if the condition is false initially.	Always executes at least once.
 Syntax	                while(condition) { // code }	c do { // code } while(condition);
 Example:
 while loop
