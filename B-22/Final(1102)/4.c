@@ -101,3 +101,49 @@ int main() {
 
     return 0;
 }
+
+#include <stdio.h>
+
+int main() {
+    int mat1[3][3], mat2[3][3], sum[3][3];
+    int i, j;
+    int isIdentity = 1; // Assume it is identity initially
+
+    // Read first matrix
+    printf("Enter elements of the first 3x3 matrix:\n");
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++) {
+            scanf("%d", &mat1[i][j]);
+        }
+    }
+
+    // Read second matrix
+    printf("Enter elements of the second 3x3 matrix:\n");
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++) {
+            scanf("%d", &mat2[i][j]);
+        }
+    }
+
+    // Calculate sum and check if it's identity
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++) {
+            sum[i][j] = mat1[i][j] + mat2[i][j];
+
+            if(i == j) {
+                if(sum[i][j] != 1)
+                    isIdentity = 0;
+            } else {
+                if(sum[i][j] != 0)
+                    isIdentity = 0;
+            }
+        }
+    }
+
+    if(isIdentity)
+        printf("Sum is an Identity Matrix.\n");
+    else
+        printf("Sum is NOT an Identity Matrix.\n");
+
+    return 0;
+}
