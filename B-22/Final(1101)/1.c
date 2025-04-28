@@ -44,6 +44,4 @@ So m = 0 || 1 → 1
 Final values: i=0, j=0, k=3, l=6, m=1
 
 ✅ Output:
-Copy
-Edit
 0 0 3 6 1
