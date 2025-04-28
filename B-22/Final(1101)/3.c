@@ -34,16 +34,25 @@ Tuesday
 
 🔹 Q3 b) Write a pseudocode to delete an element at a desired position from an array. [13 Marks]
 ✅ Pseudocode:
-Procedure DeleteElement(array, size, position)
-    if position < 0 or position ≥ size:
-        Print "Invalid position"
-        return
+START
 
-    for i from position to size - 2:
-        array[i] = array[i + 1]
+Input: array[], size, position
 
-    size = size - 1
-    return array
+IF position < 0 OR position >= size THEN
+    PRINT "Invalid position"
+    EXIT
+END IF
+
+FOR i from position to size - 2 DO
+    array[i] = array[i + 1]
+END FOR
+
+Decrease size by 1
+
+PRINT the updated array
+
+END
+
 ✅ Example in C-like logic:
 
 int arr[100], n, pos;
