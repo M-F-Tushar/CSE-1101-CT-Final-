@@ -2,7 +2,17 @@
 (a) Define Recursive Function [07 Marks]
 🔹 Definition:
 A recursive function is a function that calls itself repeatedly, until the given condition is satisfied.
-
+It breaks a complex problem into smaller subproblems of the same type.
+Every recursive function must have a base case (stopping condition) to avoid infinite recursion.
+return_type function_name(parameters) {
+    if (base_case_condition) {
+        // base case: simple answer
+        return result;
+    } else {
+        // recursive case: call itself
+        return function_name(smaller_problem);
+    }
+}
 🔹 Example:
 
 #include <stdio.h>
