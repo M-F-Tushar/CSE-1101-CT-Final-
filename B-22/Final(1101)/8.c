@@ -1,7 +1,7 @@
 ✅ Question 8
 (a) Define Recursive Function [07 Marks]
 🔹 Definition:
-A recursive function is a function that calls itself to solve a smaller subproblem of the original task, until it reaches a base condition.
+A recursive function is a function that calls itself repeatedly, until the given condition is satisfied.
 
 🔹 Example:
 
