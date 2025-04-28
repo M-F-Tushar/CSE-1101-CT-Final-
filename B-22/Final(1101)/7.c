@@ -83,19 +83,20 @@ Matches:
 #include <stdio.h>
 #include <string.h>
 
-int countOK(char str[]) {
-    int count = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == 'o' && str[i + 1] == 'k')
-            count++;
-    }
-    return count;
-}
-
 int main() {
-    char str[100];
-    fgets(str, sizeof(str), stdin); // to read full line with spaces
-    int result = countOK(str);
-    printf("%d\n", result);
+    char str[1000];
+    scanf("%[^\n]", str);  // Read until newline, spaces included
+
+    int count = 0;
+    for (int i = 0; i < strlen(str) - 1; i++) 
+    {
+        if (str[i] == 'o' && str[i+1] == 'k') 
+        {
+            count++;
+        }
+    }
+
+    printf("%d\n", count);
+
     return 0;
 }
