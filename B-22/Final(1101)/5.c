@@ -33,9 +33,30 @@ int main() {
         printf("%d ", *ptr_arr);
     }
 }
-✅ Output:
+Problem:
+Inside the loop, you always print *ptr_arr — but you never move (increment) the pointer to the next element.
+Thus, it keeps printing the first element (1) five times.
 
+Output of your code:
+1 1 1 1 1
+Corrected code:
+
+You should increment the pointer inside the loop:
+#include <stdio.h>
+
+int main() {
+    int arr[5] = { 1, 2, 3, 4, 5 };
+    int* ptr_arr = arr;
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *ptr_arr);
+        ptr_arr++;  // Move the pointer to the next element
+    }
+}
+Now the output will be:
+
+Copy code
 1 2 3 4 5
+
 🔸 Explanation:
 ptr_arr is initialized to point to arr.
 
@@ -52,16 +73,29 @@ int main() {
         printf("%c ", *ptr);
     }
 }
-✅ Output:
+Problem:
+You always print *ptr, but you never move ptr to the next character!
+So it prints the first character ('C') repeatedly.
+
+Output of your code:
+C C C C C C C C
+Here's the corrected version:
+You need to increment the pointer inside the loop:
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[] = "CSTU CSE";
+    char* ptr = str;
+    for (int i = 0; i < strlen(ptr); i++) {
+        printf("%c ", *ptr);
+        ptr++;  // Move to the next character
+    }
+}
+Output:
 
 C S T U   C S E
-🔸 Explanation:
-ptr points to str.
-
-*ptr prints each character.
-
-ptr++ moves to next character.
-
 (c) Recursive program for sequence:
 🔹 Sequence rule:
 First 3 numbers: 1 2 3
