@@ -32,7 +32,8 @@ Result = 32
 
 #include <stdio.h>
 
-int increment(int i) {
+int increment(int i) 
+{
     static int count = 0;
     count = count + i;
     return count;
@@ -47,11 +48,11 @@ int main() {
 Let's trace the loop:
 
 i	count = count + i	return value (j)
-0	0 + 0 = 0	0
-1	0 + 1 = 1	1
-2	1 + 2 = 3	3
-3	3 + 3 = 6	6
-4	6 + 4 = 10	10
+0	0 + 0 = 0	            0
+1	0 + 1 = 1	            1
+2	1 + 2 = 3	            3
+3	3 + 3 = 6	            6
+4	6 + 4 = 10	            10
 ✅ Final value of j:
 
 j = 10
