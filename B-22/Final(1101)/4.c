@@ -80,9 +80,6 @@ FAIL
 FAIL
 5
 ii.
-c
-Copy
-Edit
 int main() {
     float x = 3.14;
     double y = 3.14;
