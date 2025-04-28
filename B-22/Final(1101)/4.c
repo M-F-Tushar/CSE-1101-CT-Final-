@@ -157,9 +157,6 @@ else if missing condition:
 else if must be followed by a condition in parentheses.
 
 ✅ Corrected Code:
-c
-Copy
-Edit
 #include <stdio.h>
 
 int main() {
