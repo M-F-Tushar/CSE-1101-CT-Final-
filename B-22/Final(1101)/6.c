@@ -75,9 +75,32 @@ int main() {
     struct Employee e = {25, "ABU HASAN", 250000.00};
     printf("%d %s %.1lf", e.p.ID, e.p.Name, e.Salary);
 }
-✅ Output:
+Problem:
+In C, when a struct contains another struct (nested struct),
+you must explicitly initialize the inner struct **with braces {}.
 
-25 ABU HASAN 250000.0
+✅ Correct initialization:
+struct Employee e = { {25, "ABU HASAN"}, 250000.00 };
+Notice the extra {} around {25, "ABU HASAN"} — this is to properly initialize struct Person p.
+
+Corrected Full Code:
+#include <stdio.h>
+
+struct Person {
+    int ID;
+    char Name[50];
+};
+
+struct Employee {
+    struct Person p;
+    double Salary;
+};
+
+int main() {
+    struct Employee e = { {25, "ABU HASAN"}, 250000.00 };
+    printf("%d %s %.1lf", e.p.ID, e.p.Name, e.Salary);
+}
+
 (c) Scientist Structure Copy
 🔹 Requirements:
 Create structure for scientist with name, age, publications.
