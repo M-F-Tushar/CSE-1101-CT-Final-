@@ -1,9 +1,9 @@
 🔹 Q1 a) Distinguish between compiler and interpreter [9 Marks]
-Feature	Compiler	Interpreter
-Execution Speed	Faster, compiles whole code at once	Slower, runs code line by line
-Error Detection	Shows all errors after compilation	Stops at the first error
-Output	Creates an executable file	No executable, directly runs
-Usage Example	C, C++	Python, JavaScript
+Feature	            Compiler	                                Interpreter
+Execution Speed	    Faster, compiles whole code at once	        Slower, runs code line by line
+Error Detection	    Shows all errors after compilation	        Stops at the first error
+Output	            Creates an executable file	                No executable, directly runs
+Usage Example	    C, C++	                                    Python, JavaScript
 
 
 
