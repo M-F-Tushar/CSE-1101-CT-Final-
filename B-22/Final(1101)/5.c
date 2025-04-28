@@ -2,10 +2,8 @@
 (a) Define Dangling Pointer:
 🔹 Definition:
 A dangling pointer is a pointer that continues to reference a memory location after it has been freed or deallocated.
-
 🔹 Problem:
 Using a dangling pointer can lead to undefined behavior such as crashes or corrupting data.
-
 🔹 Example:
 
 #include <stdio.h>
@@ -28,15 +26,11 @@ free(ptr);
 ptr = NULL;
 (b) Show the output with justification
 i. Code
-c
-Copy
-Edit
 int main() {
     int arr[5] = { 1, 2, 3, 4, 5 };
     int* ptr_arr = arr;
     for (int i = 0; i < 5; i++) {
         printf("%d ", *ptr_arr);
-        ptr_arr++;
     }
 }
 ✅ Output:
@@ -50,15 +44,12 @@ ptr_arr is initialized to point to arr.
 Then we increment the pointer to move to the next element.
 
 ii. Code
-c
-Copy
-Edit
+
 int main() {
     char str[] = "CSTU CSE";
     char* ptr = str;
     for (int i = 0; i < strlen(ptr); i++) {
         printf("%c ", *ptr);
-        ptr++;
     }
 }
 ✅ Output:
