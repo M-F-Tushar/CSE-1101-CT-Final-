@@ -50,44 +50,71 @@ So, 153 is an Armstrong number.
 🔹 Q1 c) Show the output of the following program [14 Marks]
 
 #include <stdio.h>
+
 int main() {
     int i = -1, j = -1, k = 2, l = 5, m;
-    m = ++i && ++j || k++ && l++;
-    printf("%d %d %d %d %d %d", i, j, k, l, m);
+    m = i++ && ++j || k++ && l--;
+    printf("%d %d %d %d %d", i, j, k, l, m);
     return 0;
 }
-➤ Step-by-step:
-Part 1: ++i && ++j
-++i → i = 0 → result = 0 (false)
 
-Since ++i is 0, && short-circuits → ++j is NOT evaluated.
+Expression breakdown
+m = i++ && ++j || k++ && l--;
+✅ Let's evaluate carefully:
 
-So:
-i = 0
-j = -1 (unchanged)
+(i) i++ && ++j
+i++ means:
 
-Part 2: k++ && l++
-Because the first part (++i && ++j) is false, the second part must be evaluated due to the ||.
-k++ → returns 2 (true), then k = 3
-Since k++ is true, l++ is evaluated → returns 5, then l = 6
+use i first (-1), then i = i + 1 → i = 0
 
-So:
-k = 3
-l = 6
+So, i++ uses -1
 
-Expression becomes:
+-1 is true (non-zero is true in C).
 
-0 || (2 && 5) → 0 || 1 → 1
-So m = 1
+Since left side (i++) is true, right side (++j) must be evaluated (because && needs both sides when left is true).
 
-Final values:
-i = 0   // incremented
-j = -1  // not evaluated due to short-circuit
-k = 3   // post-incremented
-l = 6   // post-incremented
-m = 1   // result of expression
-✅ Correct Output:
-0 -1 3 6 1
+Now:
+
+++j: pre-increment j
+
+j = -1 + 1 = 0
+
+So ++j = 0
+
+Now we know:
+
+i++ && ++j → true (-1) AND false (0) → 0 (false)
+
+✅ Result of i++ && ++j is 0.
+
+(ii) || part
+Since i++ && ++j is false (0), we must evaluate the right side:
+
+(k++ && l--)
+k++:
+
+use k = 2 first, then k = 3
+
+2 is true
+
+Since k++ is true, evaluate l--
+
+l--:
+
+use l = 5 first, then l = 4
+
+5 is true
+
+✅ So k++ && l-- is true.
+
+(iii) Final ||
+0 || 1 → 1
+
+Thus:
+
+m = 1
+
+
 /*
 🔌 What is Short-Circuiting?
 Short-circuiting means the program stops evaluating an expression as soon as the final result is known.
