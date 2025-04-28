@@ -1,13 +1,13 @@
 🔹 Q2 a) Why do we need to use comments in programs? [7 Marks]
 Answer: Comments in C are used to:
 
-Explain code logic – makes it easier for others (or yourself) to understand later.
+(i) Explain code logic – makes it easier for others (or yourself) to understand later.
 
-Improve readability – separates logic into understandable parts.
+(ii) Improve readability – separates logic into understandable parts.
 
-Debugging aid – allows temporarily disabling code without deleting.
+(iii) Debugging aid – allows temporarily disabling code without deleting.
 
-Documentation – helps maintainers understand the design or purpose of the code.
+(iv) Documentation – helps maintainers understand the design or purpose of the code.
 
 Example:
 
