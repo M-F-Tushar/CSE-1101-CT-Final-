@@ -16,15 +16,19 @@ int main() {
     printf("Number of workers = %d\n", j.workerNo);
 }
 ✅ Output:
-
-Salary = garbage_value
+Salary = 0.0
 Number of workers = 100
+
 🔸 Explanation:
-union shares the same memory space for all members.
+Problem / Important Behavior:
+A union shares the same memory location for all its members.
+So only one member's value is valid at a time.
+When you assign j.workerNo = 100;, it overwrites the previous value of j.salary.
+Thus:
+When you print j.salary, you are reading invalid (overwritten) data.
+When you print j.workerNo, you get 100 correctly.
 
-Assigning j.workerNo = 100 overwrites j.salary.
 
-So j.salary prints garbage or unexpected float value.
 
 (b) Find and fix the errors
 i. Code Segment – Book struct
