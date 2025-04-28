@@ -74,10 +74,6 @@ char value of a[i] is being compared with '5' (ASCII 53).
 Only a[i] == 5 matches '5'.
 
 Output:
-
-nginx
-Copy
-Edit
 FAIL
 FAIL
 FAIL
