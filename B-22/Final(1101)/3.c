@@ -34,9 +34,6 @@ Tuesday
 
 🔹 Q3 b) Write a pseudocode to delete an element at a desired position from an array. [13 Marks]
 ✅ Pseudocode:
-sql
-Copy
-Edit
 Procedure DeleteElement(array, size, position)
     if position < 0 or position ≥ size:
         Print "Invalid position"
