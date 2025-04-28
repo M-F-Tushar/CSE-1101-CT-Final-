@@ -1,57 +1,63 @@
 🔹 a) Explain the following code segments with suitable input and output [10 Marks]
 i.
-c
-Copy
-Edit
-scanf("%[A-Za-z]", str);
+scanf("%[A-Z]s", str);
 printf("%s\n", str);
-✅ Explanation:
+📜 Explanation:
+%[A-Z] — Scan only uppercase letters from A to Z.
 
-%[A-Za-z] reads a sequence of only alphabets until a non-alphabet character (like space or digit) is found.
+It keeps reading characters as long as they are capital letters.
 
-Stops reading when it encounters a character outside A–Z or a–z.
+Stops reading if a non-uppercase character is entered (like a space, lowercase letter, number, etc.).
 
-Input:
+⚡ Notice: The extra s after ] is not actually needed.
+Correct format would be: scanf("%[A-Z]", str);
+(but in C, %[A-Z]s may still work on some compilers, ignoring s.)
 
-nginx
-Copy
-Edit
-Hello123
-Output:
+📥 Suitable Input Example:
+ABCDEF
+(or)
+HELLOworld
+(Here, it stops after HELLO because w is not uppercase.)
 
-nginx
-Copy
-Edit
-Hello
+📤 Output Example:
+For input:
+HELLOworld
+Output will be:
+HELLO
+✅ Only the capital letters are stored and printed.
+
 ii.
-c
-Copy
-Edit
 scanf("%[^\n]s", str);
 printf("%s\n", str);
-✅ Explanation:
+📜 Explanation:
+%[^\n] — Scan everything except newline (\n).
 
-%[^\n] reads input until a newline is encountered (i.e., reads entire line including spaces).
+It keeps reading any character until Enter key (newline) is pressed.
 
-Common for reading full sentences.
+^ inside [] means "NOT".
 
-Input:
+⚡ Again, the extra s is unnecessary. Better is: scanf("%[^\n]", str);
 
-csharp
-Copy
-Edit
-This is ChatGPT!
-Output:
+📥 Suitable Input Example:
+Hello World! Welcome to C programming.
+(You type this and then press Enter.)
 
-csharp
-Copy
-Edit
-This is ChatGPT!
+📤 Output Example:
+Hello World! Welcome to C programming.
+✅ It stores and prints the entire line you entered — spaces, punctuation, everything — until you press Enter.
+
+🔥 Quick Table:
+Code	Meaning	Example Input	Example Output
+%[A-Z]	Read only uppercase letters	HELLOworld	HELLO
+%[^\n]	Read everything except Enter	Good Morning!	Good Morning!
+🎯 Important Points:
+%[A-Z] is like a filter for only A-Z characters.
+
+%[^\n] is like a full line reader (up to Enter).
+
+Be careful: If you input wrong types (like lowercase in first case), it will stop reading immediately.
 🔹 b) Show the output of the following programs [10 Marks]
 i.
-c
-Copy
-Edit
 int main() {
     int a[5] = {1, 2, 3, 4, 5};
     for (int i = 0; i < 5; i++) {
