@@ -101,7 +101,7 @@ int main() {
 
     return 0;
 }
-
+//Another way
 #include <stdio.h>
 
 int main() {
