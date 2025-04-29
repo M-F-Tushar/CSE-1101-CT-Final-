@@ -1,5 +1,3 @@
-
-
 8. a) What is the purpose of '\0' character in C?
 Answer:
 
