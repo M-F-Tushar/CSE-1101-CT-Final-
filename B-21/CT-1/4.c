@@ -20,17 +20,26 @@ The expression:
 m = b < c ? c > d ? 14 : d > e ? 10 : 13 : 15;
 is a nested ternary operator. It can be thought of like:
 
-if (b < c) {
-    if (c > d) {
+if (b < c) 
+{
+    if (c > d) 
+    {
         m = 14;
-    } else {
-        if (d > e) {
+    } 
+    else 
+    {
+        if (d > e) 
+        {
             m = 10;
-        } else {
+        } 
+        else 
+        {
             m = 13;
         }
     }
-} else {
+} 
+else 
+{
     m = 15;
 }
 Now evaluating step-by-step:
