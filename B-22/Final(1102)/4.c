@@ -136,7 +136,8 @@ int main() {
             {
                 if(sum[i][j] != 1)
                     isIdentity = 0;
-            } else 
+            } 
+            else 
             {
                 if(sum[i][j] != 0)
                     isIdentity = 0;
