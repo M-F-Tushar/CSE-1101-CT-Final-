@@ -2,10 +2,12 @@
 4. a) Compare the following pairs of statements [12 Marks]
 i) break and continue
 
-Feature	        break	                                    continue
-Usage	        Exits the loop entirely	                    Skips the current iteration
-Affects	        Loops (for, while, do-while), switch	    Only loops (for, while, do-while)
-After effect	Control moves outside the loop	            Control moves to the next iteration
+Feature	        break	                                continue
+Function	    Terminates the entire loop or switch	Skips the current iteration and continues with the next one
+Use case	    When you want to exit a loop early	    When you want to skip part of the loop under a condition
+Affects	        The whole loop or switch block	        Only the current iteration
+Common in	    for, while, do-while, switch	        for, while, do-while
+Example effect	Jumps out of the loop immediately	    Jumps to the next loop check/update
 Example:
 
 for (int i = 0; i < 5; i++) {
