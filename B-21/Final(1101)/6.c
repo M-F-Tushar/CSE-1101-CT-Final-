@@ -1,15 +1,11 @@
 
 a) Why is a recursive function better than a loop? (10 Marks)
-Recursive Function Advantages:
-
-Simpler code for problems that are naturally recursive (e.g., factorial, Fibonacci, tree traversal).
-
-Makes code more readable and elegant.
-
-Breaks problems into smaller subproblems.
-
-Preferred in divide and conquer algorithms (e.g., quicksort, mergesort).
-
+Point	                                Explanation
+Simplicity	                            Recursive solutions are often shorter and clearer for problems that have a natural recursive structure (like tree traversal, factorial, Fibonacci, etc.).
+Easier to Think (for some problems)	    Some problems (like solving a maze, calculating factorial, tree/graph problems) are easier to solve by thinking recursively, because they naturally involve repeating smaller versions of the problem.
+Reduces Code Complexity	                In some cases, recursion can reduce the number of lines of code and avoid writing complex loops.
+Better for Dividing Problems	        Recursive functions naturally break a big problem into smaller subproblems (divide and conquer), which is perfect for problems like quicksort, mergesort.
+Elegant for Data Structures	            Recursive functions are perfect for trees, graphs, linked lists, etc., because their structure itself is recursive.
 Example:
 
 int factorial(int n) {
